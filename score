@@ -1,0 +1,41 @@
+from turtle import Turtle, Screen
+import random
+
+
+class Score(Turtle):
+  
+  def __init__(self):
+    super().__init__()
+    self.penup()
+    self.color("white")
+    self.hideturtle()
+    self.points = 0
+    self.update_scoreboard()
+
+
+  def update_scoreboard(self):
+    self.clear()
+    self.goto(-200, 200)
+    self.write("Score: ", align="center", font=("Courier", 20, "normal"))
+    self.goto(-150, 200)
+    self.write(self.points, align="center", font=("Courier", 20, "normal"))
+  
+
+  def point(self):
+    self.points += 1
+    self.update_scoreboard()
+
+  def end_game(self):
+    self.goto(0, 0)
+    self.write("game over", align="center", font=("Courier", 80, "normal"))
+    self.goto(-200, 200)
+    self.write("Score: ", align="center", font=("Courier", 20, "normal"))
+    self.goto(-150, 200)
+    self.write(self.points, align="center", font=("Courier", 20, "normal"))
+   
+
+
+
+  
+  
+  
