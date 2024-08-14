@@ -1,0 +1,29 @@
+from turtle import Turtle, Screen
+import random
+rand_colors = ["red", "blue", "gray", "white", "yellow"]
+rand_speeds = [-10, -20, -5, -12, -16, -14, -11, -17]
+
+
+class Cars(Turtle):
+  
+  def __init__(self, position):
+    super().__init__()
+    self.color(random.choice(rand_colors))
+    self.shape("square")
+    self.penup()
+    self.setheading(90)
+    self.shapesize(3, 1.5)
+    self.setposition(position)
+    self.speed_x = random.choice(rand_speeds)
+
+  def movement(self):
+    new_x = self.xcor() + self.speed_x
+    self.goto(new_x, self.ycor())
+
+  def restart_car(self):
+    self.goto(400, self.ycor())
+
+  
+    
+    
+    
